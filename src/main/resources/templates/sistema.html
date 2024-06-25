@@ -1,0 +1,151 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo2.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Admin</title>
+</head>
+
+<body>
+    <style>
+        .container2 {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+
+        .details {
+            margin-top: 20px;
+        }
+
+        .details span {
+            font-weight: bold;
+        }
+    </style>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="ajuste.jpg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema - Admin</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <!--
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Buscar...">
+                </li>
+                -->
+                <li class="nav-link">
+
+                    <a th:href="@{/persona/}">
+                        <i class='bx bx-home-alt icon'></i>
+                        <span class="text nav-text">Personas</span>
+
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a th:href="@{/usuario/}">
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <span class="text nav-text">Usuarios</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a th:href="@{/departamento/}">
+                        <i class='bx bx-heart icon'></i>
+                        <span class="text nav-text">Departamentos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a th:href="@{/horario/}">
+                        <i class='bx bx-pie-chart-alt icon'></i>
+                        <span class="text nav-text">Horarios</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-bell icon'></i>
+                        <span class="text nav-text">Reportes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text nav-text">Cámara</span>
+                    </a>
+                </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Cerrar Sesión</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Modo oscuro</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="container2">
+            <img src="admin.jpg" alt="Admin" class="profile-pic">
+            <h1>Administrador</h1>
+            <p class="details">
+                <span>Edad:</span> 33 años<br><br>
+                <span>Ubicación:</span> Lima - Perú<br><br>
+            </p>
+            <p>Acerca de mí:</p>
+            <p>Soy un desarrollador web completo y programador senior con buenos conocimientos de técnicas front-end y  back-end</p>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
