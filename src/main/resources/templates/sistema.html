@@ -62,20 +62,18 @@
                 </li>
                 -->
                 <li class="nav-link">
-
                     <a th:href="@{/persona/}">
                         <i class='bx bx-home-alt icon'></i>
                         <span class="text nav-text">Personas</span>
-
                     </a>
                 </li>
-
+                <!--
                 <li class="nav-link">
                     <a th:href="@{/usuario/}">
                         <i class='bx bx-bar-chart-alt-2 icon'></i>
                         <span class="text nav-text">Usuarios</span>
                     </a>
-                </li>
+                </li>-->
 
                 <li class="nav-link">
                     <a th:href="@{/departamento/}">
@@ -92,25 +90,19 @@
                 </li>
 
                 <li class="nav-link">
-                    <a href="#">
+                    <a th:href="@{/asistensia/}">
                         <i class='bx bx-bell icon'></i>
                         <span class="text nav-text">Reportes</span>
                     </a>
                 </li>
 
-                <li class="nav-link">
-                    <a href="#">
-                        <i class='bx bx-wallet icon'></i>
-                        <span class="text nav-text">Cámara</span>
-                    </a>
-                </li>
 
                 </ul>
             </div>
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a th:href="@{/}">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Cerrar Sesión</span>
                     </a>
@@ -134,14 +126,29 @@
 
     <section class="home">
         <div class="container2">
-            <img src="admin.jpg" alt="Admin" class="profile-pic">
+            <img src="./uploads/Julio.jpg" alt="Admin" class="profile-pic" width="50">
             <h1>Administrador</h1>
             <p class="details">
                 <span>Edad:</span> 33 años<br><br>
                 <span>Ubicación:</span> Lima - Perú<br><br>
             </p>
-            <p>Acerca de mí:</p>
-            <p>Soy un desarrollador web completo y programador senior con buenos conocimientos de técnicas front-end y  back-end</p>
+            <span>Acerca de mí:</span>
+            <ul>
+                <li>Profesional con mas de 5 años de experiencia en ventas directa B2B.</li>
+                <li>Liderar grupos de personas, planificar estrategias y trabajar para el cumplimiento de KPIs en la organización.</li>
+                <li>Profesional responsable, honesto, positivo en la cultura organizacional.</li>
+                <li>Gestión de mejora continua fortaleciendo los conocimientos blandos y motivación de personal.</li>
+            </ul>
+            <br><br>
+        
+            <span>Experiencia:</span>
+            <ul>
+                <li>Gerente de Ventas</li>
+                <li>Claro Perú</li>
+                <li>Coordinador de marketing</li>
+                <li>Coordinador del servicio de atención al cliente</li>
+                <li>Ejecutivo de cuentas</li>
+            </ul>
         </div>
     </section>
 
