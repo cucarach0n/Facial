@@ -1,0 +1,196 @@
+<html>
+
+<head>
+    <title>Lista de Asistencia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="../css/estilo2.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+
+
+<body class="container" style="margin-left: 250px; background-color:#363434">
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="logo.jpg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name"></span>
+                    <span class="profession">Sistema</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <!--
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Buscar...">
+                </li>
+                -->
+                <li class="nav-link">
+
+                    <a th:href="@{/persona/}">
+                        <i class='bx bx-home-alt icon'></i>
+                        <span class="text nav-text">Personas</span>
+
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a th:href="@{/usuario/}">
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <span class="text nav-text">Usuarios</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a th:href="@{/departamento/}">
+                        <i class='bx bx-bell icon'></i>
+                        <span class="text nav-text">Departamentos</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a th:href="@{/horario/}">
+                        <i class='bx bx-pie-chart-alt icon'></i>
+                        <span class="text nav-text">Horarios</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-heart icon'></i>
+                        <span class="text nav-text">Reportes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-wallet icon'></i>
+                        <span class="text nav-text">Usuarios</span>
+                    </a>
+                </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Cerrar Sesión</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Modo oscuro</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+    </nav>
+    <script src="../js/script.js"></script>
+
+
+
+    <div class="container">
+
+        <!--
+
+            <div th:insert="menu :: #principal"></div>
+            <hr>
+                
+
+        <form action="/persona/buscar" method="post" class="d-flex" role="search">
+            <input name="desc" required="required" class="form-control me-2" type="search" placeholder="Ingrese DNI"
+                aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>-->
+
+
+
+
+        <!---->
+
+
+        
+
+        <center>
+            <br><br><br>
+            <h2 style="color: white;">Reporte de asistencia</h2>
+        </center>
+
+        <hr style="color: white;">
+        <br><br>
+
+        <hr>
+
+        <!--Buscar por un rango de fechas-->
+        <form action="buscar" method="post" class="d-flex" role="search">
+            <input name="fechaInicio" required="required"  class="form-control me-2" type="date" placeholder="Fecha Inicio"
+                aria-label="Search">
+            <input name="fechaFin" required="required" class="form-control me-2" type="date" placeholder="Fecha Fin"
+                aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr class="table-dark">
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Departamento</th>
+                    <th>Dias Laborales</th>
+                    <th>Fecha Registro</th>
+                    <th>Estado Asistencia</th>
+                    <th>Tipo Asistencia</th>
+                </tr>
+                <tr style="color: white;" th:each="asistencia,status : ${asistencias}" th:if="${asistencia.EstadoAsistencia != null}" >
+                    <td style="color: white;" th:text="${status.count}"></td>
+                    <td style="color: white;" th:text="${asistencia.usuario.persona.getNombre()}"></td>
+                    <td style="color: white;" th:text="${asistencia.usuario.departamento.getNombreDepartamento()}"></td>
+                    <td style="color: white;" th:text="${asistencia.usuario.departamento.horario.diasLaborales}"></td>
+                    <td style="color: white;" th:text="${asistencia.fechaAsistencia}"></td>
+                    <td th:style="'color: white; background-color: ' + (${asistencia.EstadoAsistencia} == 'Asistio' ? 'green' : (${asistencia.EstadoAsistencia} == 'Tarde' ? 'orange' : 'transparent'))" th:text="${asistencia.EstadoAsistencia}"></td>
+                    <td style="color: white;" th:text="${asistencia.tipoAsistencia}"></td>
+
+                </tr>
+            </table>
+        </div>
+
+    
+
+    </div>
+
+    
+</body>
+
+</html>

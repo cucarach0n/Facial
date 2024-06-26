@@ -21,16 +21,41 @@ public class Departamento {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
+    public int id;
     public String nombreDepartamento;
-    private String descripcionDepartamento;
-    private Date fechaCreacion2;
-    private Date fechaModificacion2;
+    public String descripcionDepartamento;
+    public Date fechaCreacion2;
+    public Date fechaModificacion2;
 
     @ManyToOne()
     @JoinColumn(name="horario_id")
-    private Horario horario;
+    public Horario horario;
 
     @OneToMany(mappedBy ="departamento", fetch = FetchType.LAZY)
     public List<Usuario> usuario;
+
+    // Métodos getters y setters
+    public String getNombreDepartamento() {
+        return nombreDepartamento;
+    }
+
+    public void setNombreDepartamento(String nombreDepartamento) {
+        this.nombreDepartamento = nombreDepartamento;
+    }
+
+    public String getDescripcionDepartamento() {
+        return descripcionDepartamento;
+    }
+
+    public void setDescripcionDepartamento(String descripcionDepartamento) {
+        this.descripcionDepartamento = descripcionDepartamento;
+    }   
+
+    public Date getFechaCreacion2() {
+        return fechaCreacion2;
+    }
+
+    public void setFechaCreacion2(Date fechaCreacion2) {
+        this.fechaCreacion2 = fechaCreacion2;
+    }
 }

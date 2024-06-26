@@ -16,10 +16,10 @@ public class Horario {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
-    private String diasLaborales;
-    private String horaEntrada;
-    private String horaSalida;
-    private Date fechaCreacion;
-    private Date fechaModificacion;
+    public int id;
+    public String diasLaborales;
+    public String horaEntrada;
+    public String horaSalida;
+    public Date fechaCreacion;
+    public Date fechaModificacion;
 }

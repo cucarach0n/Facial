@@ -1,5 +1,6 @@
 package com.example.Facial.Servicios;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,6 +37,11 @@ public class AsistenciaService implements IAsistenciaService{
     @Override
     public void Eliminar(int id) {
         data.deleteById(id);
+    }
+
+    @Override
+    public List<Asistencia> buscarPorFecha(Date fechaInicio, Date fechaFin) {
+        return data.buscarPorFecha(fechaInicio, fechaFin);
     }
     
 }

@@ -16,14 +16,14 @@ import lombok.Data;
 public class Asistencia {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
-    private Date fechaAsistencia;
-    private String tipoAsistencia;
-    private String EstadoAsistencia;
+    public int id;
+    public Date fechaAsistencia;
+    public String tipoAsistencia;
+    public String EstadoAsistencia;
 
     @ManyToOne()
     @JoinColumn(name="camara_id")
-    private Camara camara;
+    public Camara camara;
 
     @ManyToOne()
     @JoinColumn(name="usuario_id")
